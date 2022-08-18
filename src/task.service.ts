@@ -1,17 +1,17 @@
-import { Injectable, Logger } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { Cron } from "@nestjs/schedule";
-import { NoReqService } from "./no.req.service";
+import { ReqService } from "./req.service";
 
 @Injectable()
 export class TasksService {
   
   constructor(
-    private readonly noReqService: NoReqService
+    private readonly reqService: ReqService
   ) {
   }
   
   @Cron("45 * * * * *")
   handleCron() {
-    this.noReqService.aTask();
+    this.reqService.aTask();
   }
 }

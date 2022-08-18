@@ -3,7 +3,7 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { ScheduleModule } from "@nestjs/schedule";
 import { TasksService } from "./task.service";
-import { NoReqService } from "./no.req.service";
+import { ReqService } from "./req.service";
 
 @Module({
   imports: [
@@ -13,7 +13,7 @@ import { NoReqService } from "./no.req.service";
   providers: [
     AppService,
     TasksService,
-    NoReqService,
+    ReqService,
   ]
 })
 export class AppModule {
